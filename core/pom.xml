@@ -16,15 +16,18 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <warName>wsi.subscriber-smsc-${project.version}</warName>
-          <outputDirectory>./build</outputDirectory>
-        </configuration>
-      </plugin>
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-war-plugin</artifactId>-->
+        <!--<version>2.6</version>-->
+        <!--<configuration>-->
+          <!--<warName>wsi.subscriber-smsc-${project.version}</warName>-->
+          <!--<outputDirectory>./build</outputDirectory>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+
+
+
 
       <!--<plugin>-->
         <!--<groupId>org.codehaus.mojo</groupId>-->

@@ -2,7 +2,6 @@ package com.nuevatel.smsccli;
 
 import com.nuevatel.common.ShutdownHook;
 import com.nuevatel.common.util.IntegerUtil;
-import com.nuevatel.common.util.LongUtil;
 
 import java.io.FileInputStream;
 import java.io.IOException;
