@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.nuevatel.smsccli</groupId>
+  <artifactId>smsc.cli-core</artifactId>
+  <name>SMSC CLI Core</name>
+
+  <parent>
+    <groupId>com.nuevatel.smsccli</groupId>
+    <artifactId>smsc.cli</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <warName>wsi.subscriber-smsc-${project.version}</warName>
+          <outputDirectory>./build</outputDirectory>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <configuration>
+          <!-- keep created files -->
+          <keep>true</keep>
+          <!-- Needed with JAXP 1.5 -->
+          <vmArgs>
+            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+          </vmArgs>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>wsimport</goal>
+            </goals>
+            <configuration>
+              <wsdlDirectory>./webapp/WEB-INF/wsdl</wsdlDirectory>
+              <wsdlFiles>
+                <wsdlFile>wsi_subscriber.wsdl</wsdlFile>
+              </wsdlFiles>
+              <!-- keep created files -->
+              <keep>true</keep>
+              <sourceDestDir>src/main/java</sourceDestDir>
+              <packageName>jaxws.smsc.subscriber</packageName>
+              <verbose>true</verbose>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.nuevatel</groupId>
+      <artifactId>common-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>versions-maven-plugin</artifactId>
+    </dependency>
+  </dependencies>
+</project>

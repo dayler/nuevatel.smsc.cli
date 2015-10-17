@@ -1,0 +1,458 @@
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6 in JDK 6.-->
+<definitions targetNamespace="http://wsi.mc.nuevatel.com/" name="SubscriberWSI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsi.mc.nuevatel.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://wsi.mc.nuevatel.com/" schemaLocation="wsi_subscriber.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="addBalance">
+        <part name="parameters" element="tns:addBalance"/>
+    </message>
+    <message name="addBalanceResponse">
+        <part name="parameters" element="tns:addBalanceResponse"/>
+    </message>
+    <message name="Exception">
+        <part name="fault" element="tns:Exception"/>
+    </message>
+    <message name="addHoldBalance">
+        <part name="parameters" element="tns:addHoldBalance"/>
+    </message>
+    <message name="addHoldBalanceResponse">
+        <part name="parameters" element="tns:addHoldBalanceResponse"/>
+    </message>
+    <message name="applyHoldBalance">
+        <part name="parameters" element="tns:applyHoldBalance"/>
+    </message>
+    <message name="applyHoldBalanceResponse">
+        <part name="parameters" element="tns:applyHoldBalanceResponse"/>
+    </message>
+    <message name="extendHoldBalance">
+        <part name="parameters" element="tns:extendHoldBalance"/>
+    </message>
+    <message name="extendHoldBalanceResponse">
+        <part name="parameters" element="tns:extendHoldBalanceResponse"/>
+    </message>
+    <message name="removeHoldBalance">
+        <part name="parameters" element="tns:removeHoldBalance"/>
+    </message>
+    <message name="removeHoldBalanceResponse">
+        <part name="parameters" element="tns:removeHoldBalanceResponse"/>
+    </message>
+    <message name="subtractBalance">
+        <part name="parameters" element="tns:subtractBalance"/>
+    </message>
+    <message name="subtractBalanceResponse">
+        <part name="parameters" element="tns:subtractBalanceResponse"/>
+    </message>
+    <message name="addHoldCharge">
+        <part name="parameters" element="tns:addHoldCharge"/>
+    </message>
+    <message name="addHoldChargeResponse">
+        <part name="parameters" element="tns:addHoldChargeResponse"/>
+    </message>
+    <message name="applyHoldCharge">
+        <part name="parameters" element="tns:applyHoldCharge"/>
+    </message>
+    <message name="applyHoldChargeResponse">
+        <part name="parameters" element="tns:applyHoldChargeResponse"/>
+    </message>
+    <message name="extendHoldCharge">
+        <part name="parameters" element="tns:extendHoldCharge"/>
+    </message>
+    <message name="extendHoldChargeResponse">
+        <part name="parameters" element="tns:extendHoldChargeResponse"/>
+    </message>
+    <message name="removeHoldCharge">
+        <part name="parameters" element="tns:removeHoldCharge"/>
+    </message>
+    <message name="removeHoldChargeResponse">
+        <part name="parameters" element="tns:removeHoldChargeResponse"/>
+    </message>
+    <message name="deleteBalance">
+        <part name="parameters" element="tns:deleteBalance"/>
+    </message>
+    <message name="deleteBalanceResponse">
+        <part name="parameters" element="tns:deleteBalanceResponse"/>
+    </message>
+    <message name="addSubscriber">
+        <part name="parameters" element="tns:addSubscriber"/>
+    </message>
+    <message name="addSubscriberResponse">
+        <part name="parameters" element="tns:addSubscriberResponse"/>
+    </message>
+    <message name="getSubscriberPort">
+        <part name="parameters" element="tns:getSubscriberPort"/>
+    </message>
+    <message name="getSubscriberPortResponse">
+        <part name="parameters" element="tns:getSubscriberPortResponse"/>
+    </message>
+    <message name="updateSubscriber">
+        <part name="parameters" element="tns:updateSubscriber"/>
+    </message>
+    <message name="updateSubscriberResponse">
+        <part name="parameters" element="tns:updateSubscriberResponse"/>
+    </message>
+    <message name="deleteSubscriber">
+        <part name="parameters" element="tns:deleteSubscriber"/>
+    </message>
+    <message name="deleteSubscriberResponse">
+        <part name="parameters" element="tns:deleteSubscriberResponse"/>
+    </message>
+    <message name="addSubscriberFriend">
+        <part name="parameters" element="tns:addSubscriberFriend"/>
+    </message>
+    <message name="addSubscriberFriendResponse">
+        <part name="parameters" element="tns:addSubscriberFriendResponse"/>
+    </message>
+    <message name="getSubscriberFriendPortSet">
+        <part name="parameters" element="tns:getSubscriberFriendPortSet"/>
+    </message>
+    <message name="getSubscriberFriendPortSetResponse">
+        <part name="parameters" element="tns:getSubscriberFriendPortSetResponse"/>
+    </message>
+    <message name="deleteSubscriberFriend">
+        <part name="parameters" element="tns:deleteSubscriberFriend"/>
+    </message>
+    <message name="deleteSubscriberFriendResponse">
+        <part name="parameters" element="tns:deleteSubscriberFriendResponse"/>
+    </message>
+    <message name="deleteBalanceSet">
+        <part name="parameters" element="tns:deleteBalanceSet"/>
+    </message>
+    <message name="deleteBalanceSetResponse">
+        <part name="parameters" element="tns:deleteBalanceSetResponse"/>
+    </message>
+    <portType name="SubscriberWSIPort">
+        <operation name="addBalance">
+            <input message="tns:addBalance"/>
+            <output message="tns:addBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="addHoldBalance">
+            <input message="tns:addHoldBalance"/>
+            <output message="tns:addHoldBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="applyHoldBalance">
+            <input message="tns:applyHoldBalance"/>
+            <output message="tns:applyHoldBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="extendHoldBalance">
+            <input message="tns:extendHoldBalance"/>
+            <output message="tns:extendHoldBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="removeHoldBalance">
+            <input message="tns:removeHoldBalance"/>
+            <output message="tns:removeHoldBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="subtractBalance">
+            <input message="tns:subtractBalance"/>
+            <output message="tns:subtractBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="addHoldCharge">
+            <input message="tns:addHoldCharge"/>
+            <output message="tns:addHoldChargeResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="applyHoldCharge">
+            <input message="tns:applyHoldCharge"/>
+            <output message="tns:applyHoldChargeResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="extendHoldCharge">
+            <input message="tns:extendHoldCharge"/>
+            <output message="tns:extendHoldChargeResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="removeHoldCharge">
+            <input message="tns:removeHoldCharge"/>
+            <output message="tns:removeHoldChargeResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="deleteBalance">
+            <input message="tns:deleteBalance"/>
+            <output message="tns:deleteBalanceResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="addSubscriber">
+            <input message="tns:addSubscriber"/>
+            <output message="tns:addSubscriberResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getSubscriberPort">
+            <input message="tns:getSubscriberPort"/>
+            <output message="tns:getSubscriberPortResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="updateSubscriber">
+            <input message="tns:updateSubscriber"/>
+            <output message="tns:updateSubscriberResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="deleteSubscriber">
+            <input message="tns:deleteSubscriber"/>
+            <output message="tns:deleteSubscriberResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="addSubscriberFriend">
+            <input message="tns:addSubscriberFriend"/>
+            <output message="tns:addSubscriberFriendResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="getSubscriberFriendPortSet">
+            <input message="tns:getSubscriberFriendPortSet"/>
+            <output message="tns:getSubscriberFriendPortSetResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="deleteSubscriberFriend">
+            <input message="tns:deleteSubscriberFriend"/>
+            <output message="tns:deleteSubscriberFriendResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+        <operation name="deleteBalanceSet">
+            <input message="tns:deleteBalanceSet"/>
+            <output message="tns:deleteBalanceSetResponse"/>
+            <fault message="tns:Exception" name="Exception"/>
+        </operation>
+    </portType>
+    <binding name="SubscriberWSIPortBinding" type="tns:SubscriberWSIPort">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="addBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addHoldBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="applyHoldBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="extendHoldBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="removeHoldBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="subtractBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addHoldCharge">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="applyHoldCharge">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="extendHoldCharge">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="removeHoldCharge">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addSubscriber">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSubscriberPort">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateSubscriber">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteSubscriber">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addSubscriberFriend">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSubscriberFriendPortSet">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteSubscriberFriend">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deleteBalanceSet">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="Exception">
+                <soap:fault name="Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="SubscriberWSI">
+        <port name="SubscriberWSIPort" binding="tns:SubscriberWSIPortBinding">
+            <soap:address location="http://10.45.5.41:8082/wsi/subscriber"/>
+        </port>
+    </service>
+</definitions>

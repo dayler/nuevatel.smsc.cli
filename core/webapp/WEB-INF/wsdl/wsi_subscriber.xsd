@@ -1,0 +1,303 @@
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6 in JDK 6.-->
+<xs:schema version="1.0" targetNamespace="http://wsi.mc.nuevatel.com/" xmlns:tns="http://wsi.mc.nuevatel.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Exception" type="tns:Exception"/>
+    <xs:element name="addBalance" type="tns:addBalance"/>
+    <xs:element name="addBalanceResponse" type="tns:addBalanceResponse"/>
+    <xs:element name="addHoldBalance" type="tns:addHoldBalance"/>
+    <xs:element name="addHoldBalanceResponse" type="tns:addHoldBalanceResponse"/>
+    <xs:element name="addHoldCharge" type="tns:addHoldCharge"/>
+    <xs:element name="addHoldChargeResponse" type="tns:addHoldChargeResponse"/>
+    <xs:element name="addSubscriber" type="tns:addSubscriber"/>
+    <xs:element name="addSubscriberFriend" type="tns:addSubscriberFriend"/>
+    <xs:element name="addSubscriberFriendResponse" type="tns:addSubscriberFriendResponse"/>
+    <xs:element name="addSubscriberResponse" type="tns:addSubscriberResponse"/>
+    <xs:element name="applyHoldBalance" type="tns:applyHoldBalance"/>
+    <xs:element name="applyHoldBalanceResponse" type="tns:applyHoldBalanceResponse"/>
+    <xs:element name="applyHoldCharge" type="tns:applyHoldCharge"/>
+    <xs:element name="applyHoldChargeResponse" type="tns:applyHoldChargeResponse"/>
+    <xs:element name="balanceMapPort" type="tns:balanceMapPort"/>
+    <xs:element name="balancePort" type="tns:balancePort"/>
+    <xs:element name="balanceSetPort" type="tns:balanceSetPort"/>
+    <xs:element name="chargePort" type="tns:chargePort"/>
+    <xs:element name="deleteBalance" type="tns:deleteBalance"/>
+    <xs:element name="deleteBalanceResponse" type="tns:deleteBalanceResponse"/>
+    <xs:element name="deleteBalanceSet" type="tns:deleteBalanceSet"/>
+    <xs:element name="deleteBalanceSetResponse" type="tns:deleteBalanceSetResponse"/>
+    <xs:element name="deleteSubscriber" type="tns:deleteSubscriber"/>
+    <xs:element name="deleteSubscriberFriend" type="tns:deleteSubscriberFriend"/>
+    <xs:element name="deleteSubscriberFriendResponse" type="tns:deleteSubscriberFriendResponse"/>
+    <xs:element name="deleteSubscriberResponse" type="tns:deleteSubscriberResponse"/>
+    <xs:element name="extendHoldBalance" type="tns:extendHoldBalance"/>
+    <xs:element name="extendHoldBalanceResponse" type="tns:extendHoldBalanceResponse"/>
+    <xs:element name="extendHoldCharge" type="tns:extendHoldCharge"/>
+    <xs:element name="extendHoldChargeResponse" type="tns:extendHoldChargeResponse"/>
+    <xs:element name="friendPort" type="tns:friendPort"/>
+    <xs:element name="getSubscriberFriendPortSet" type="tns:getSubscriberFriendPortSet"/>
+    <xs:element name="getSubscriberFriendPortSetResponse" type="tns:getSubscriberFriendPortSetResponse"/>
+    <xs:element name="getSubscriberPort" type="tns:getSubscriberPort"/>
+    <xs:element name="getSubscriberPortResponse" type="tns:getSubscriberPortResponse"/>
+    <xs:element name="holdChargePort" type="tns:holdChargePort"/>
+    <xs:element name="removeHoldBalance" type="tns:removeHoldBalance"/>
+    <xs:element name="removeHoldBalanceResponse" type="tns:removeHoldBalanceResponse"/>
+    <xs:element name="removeHoldCharge" type="tns:removeHoldCharge"/>
+    <xs:element name="removeHoldChargeResponse" type="tns:removeHoldChargeResponse"/>
+    <xs:element name="subscriberPort" type="tns:subscriberPort"/>
+    <xs:element name="subtractBalance" type="tns:subtractBalance"/>
+    <xs:element name="subtractBalanceResponse" type="tns:subtractBalanceResponse"/>
+    <xs:element name="updateSubscriber" type="tns:updateSubscriber"/>
+    <xs:element name="updateSubscriberResponse" type="tns:updateSubscriberResponse"/>
+    <xs:complexType name="deleteSubscriber">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteSubscriberResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="Exception">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="applyHoldCharge">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="applyHoldChargeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:balanceMapPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="balanceMapPort">
+        <xs:sequence>
+            <xs:element name="balanceSetPortSet" type="tns:balanceSetPort" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="balanceSetPort">
+        <xs:sequence>
+            <xs:element name="balanceIndex" type="xs:int" minOccurs="0"/>
+            <xs:element name="balanceName" type="xs:string" minOccurs="0"/>
+            <xs:element name="balancePortSet" type="tns:balancePort" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="balancePort">
+        <xs:sequence>
+            <xs:element name="tmpIndex" type="xs:int" minOccurs="0"/>
+            <xs:element name="balance" type="xs:int" minOccurs="0"/>
+            <xs:element name="startTimestamp" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="endTimestamp" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="rCharge" type="xs:decimal" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteBalanceSet">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:int" minOccurs="0"/>
+            <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteBalanceSetResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:balanceMapPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteSubscriberFriend">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="tns:friendPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="friendPort">
+        <xs:sequence>
+            <xs:element name="friendName" type="xs:string" minOccurs="0"/>
+            <xs:element name="friendLayoutId" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteSubscriberFriendResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="applyHoldBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="applyHoldBalanceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:balanceMapPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addSubscriber">
+        <xs:sequence>
+            <xs:element name="arg0" type="tns:subscriberPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="subscriberPort">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="layoutId" type="xs:int" minOccurs="0"/>
+            <xs:element name="layoutName" type="xs:string" minOccurs="0"/>
+            <xs:element name="bsgwArg0" type="xs:int" minOccurs="0"/>
+            <xs:element name="bsgwArg1" type="xs:string" minOccurs="0"/>
+            <xs:element name="balanceMapPort" type="tns:balanceMapPort" minOccurs="0"/>
+            <xs:element name="balanceMapPortWH" type="tns:balanceMapPort" minOccurs="0"/>
+            <xs:element name="holdChargePortList" type="tns:holdChargePort" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="holdChargePort">
+        <xs:sequence>
+            <xs:element name="holdId" type="xs:string" minOccurs="0"/>
+            <xs:element name="endTimestamp" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="chargePortList" type="tns:chargePort" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="chargePort">
+        <xs:sequence>
+            <xs:element name="balanceIndex" type="xs:int" minOccurs="0"/>
+            <xs:element name="charge" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addSubscriberResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="deleteBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deleteBalanceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:balanceMapPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="removeHoldCharge">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="removeHoldChargeResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="addSubscriberFriend">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="tns:friendPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addSubscriberFriendResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="addHoldBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="tns:balanceMapPort" minOccurs="0"/>
+            <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg3" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addHoldBalanceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="removeHoldBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="removeHoldBalanceResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="extendHoldBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg2" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="extendHoldBalanceResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="addHoldCharge">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="tns:chargePort" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg3" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addHoldChargeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="updateSubscriber">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:int"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg2" type="tns:subscriberPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="updateSubscriberResponse">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="subtractBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="tns:chargePort" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="subtractBalanceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:balanceMapPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSubscriberPort">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSubscriberPortResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:subscriberPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSubscriberFriendPortSet">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getSubscriberFriendPortSetResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:friendPort" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addBalance">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="tns:balanceMapPort" minOccurs="0"/>
+            <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addBalanceResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:balanceMapPort" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="extendHoldCharge">
+        <xs:sequence>
+            <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+            <xs:element name="arg2" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="extendHoldChargeResponse">
+        <xs:sequence/>
+    </xs:complexType>
+</xs:schema>
