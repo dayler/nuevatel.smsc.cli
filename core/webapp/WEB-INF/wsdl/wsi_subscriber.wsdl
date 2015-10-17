@@ -1,5 +1,8 @@
 <!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6 in JDK 6.-->
-<definitions targetNamespace="http://wsi.mc.nuevatel.com/" name="SubscriberWSI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsi.mc.nuevatel.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<definitions targetNamespace="http://wsi.mc.nuevatel.com/" name="SubscriberWSI"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsi.mc.nuevatel.com/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:jaxws="http://schemas.xmlsoap.org/wsdl/soap/">
     <types>
         <xsd:schema>
             <xsd:import namespace="http://wsi.mc.nuevatel.com/" schemaLocation="wsi_subscriber.xsd"/>

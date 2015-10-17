@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bindings
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        wsdlLocation="wsi_subscriber.wsdl"
+        xmlns="http://java.sun.com/xml/ns/jaxws">
+    <package name="jaxws.smsc.subscriber.async"/>
+    <!-- applies to wsdl:definitions node, that would mean the entire wsdl -->
+    <enableAsyncMapping>true</enableAsyncMapping>
+    <!-- wsdl:portType operation customization -->
+    <bindings node="wsdl:definitions/wsdl:portType [@name='SubscriberWSIPort']/wsdl:operation[@name='getExchangeRate']">
+        <enableAsyncMapping>true</enableAsyncMapping>
+    </bindings>
+</bindings>

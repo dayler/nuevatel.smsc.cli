@@ -1,6 +1,8 @@
 package com.nuevatel.smsccli;
 
 import com.nuevatel.common.ShutdownHook;
+import com.nuevatel.common.util.IntegerUtil;
+import com.nuevatel.common.util.LongUtil;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,14 +20,26 @@ public class App {
             Properties prop = loadProperties(args);
             // wait 1 minute to finish all process
             ShutdownHook hook = new ShutdownHook(60, 1);
-            BulkProcessor processor = new BulkProcessor();
+            // Read props
+            String url = prop.getProperty("ws.subscriber.url");
+            String source;
+            if (args.length >= 2) {
+                source = args[1];
+            } else {
+                source = "/tmp/test.txt";
+            }
+
+            Integer size = IntegerUtil.tryParse(prop.getProperty("size"));
+            Long timeout = LongUtil.tryParse(prop.getProperty("ws.subscriber.timeout"));
+            Long connTimeout = LongUtil.tryParse(prop.getProperty("ws.subscriber.connTimeout"));
+            BulkProcessor processor = new BulkProcessor(url, source, size, timeout, connTimeout);
             hook.appendProcess(processor);
             // Start client processor
             processor.execute();
             Runtime.getRuntime().addShutdownHook(hook);
         } catch (Throwable ex) {
             System.out.println("Failed to initialize ...");
-            System.out.println("EXCEPTION:" + ex.getClass().getName() + " MESSAGE: " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
