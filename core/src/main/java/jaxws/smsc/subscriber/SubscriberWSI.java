@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "SubscriberWSI", targetNamespace = "http://wsi.mc.nuevatel.com/", wsdlLocation = "file:/Users/dayler/dev/git/github/nuevatel.smsc.cli/core/webapp/WEB-INF/wsdl/wsi_subscriber.wsdl")
+@WebServiceClient(name = "SubscriberWSI", targetNamespace = "http://wsi.mc.nuevatel.com/", wsdlLocation = "/WEB-INF/wsdl/wsi_subscriber.wsdl")
 public class SubscriberWSI
     extends Service
 {
@@ -26,20 +26,8 @@ public class SubscriberWSI
     private final static Logger logger = Logger.getLogger(jaxws.smsc.subscriber.SubscriberWSI.class.getName());
 
     static {
-        URL url = null;
-        try {
-            URL baseUrl;
-            baseUrl = jaxws.smsc.subscriber.SubscriberWSI.class.getResource(".");
-            url = new URL(baseUrl, "file:/Users/dayler/dev/git/github/nuevatel.smsc.cli/core/webapp/WEB-INF/wsdl/wsi_subscriber.wsdl");
-        } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/Users/dayler/dev/git/github/nuevatel.smsc.cli/core/webapp/WEB-INF/wsdl/wsi_subscriber.wsdl', retrying as a local file");
-            logger.warning(e.getMessage());
-        }
+        URL url = SubscriberWSI.class.getResource("/WEB-INF/wsdl/wsi_subscriber.wsdl");
         SUBSCRIBERWSI_WSDL_LOCATION = url;
-    }
-
-    public SubscriberWSI(URL wsdlLocation, QName serviceName) {
-        super(wsdlLocation, serviceName);
     }
 
     public SubscriberWSI() {
