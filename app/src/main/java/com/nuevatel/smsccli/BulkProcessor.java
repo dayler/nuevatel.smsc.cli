@@ -4,7 +4,6 @@ import com.nuevatel.common.Processor;
 import com.nuevatel.common.thread.SimpleMonitor;
 import com.nuevatel.common.util.ExceptionUtil;
 import com.nuevatel.common.util.IntegerUtil;
-import com.sun.xml.internal.ws.client.BindingProviderProperties;
 import jaxws.smsc.subscriber.*;
 
 import javax.xml.ws.BindingProvider;
@@ -73,8 +72,8 @@ public class BulkProcessor implements Processor {
         SubscriberWSI service = new SubscriberWSI();
         SubscriberWSIPort subscriberPort = service.getSubscriberWSIPort();
         ((BindingProvider)subscriberPort).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, wsUrl);
-        ((BindingProvider)subscriberPort).getRequestContext().put(BindingProviderProperties.REQUEST_TIMEOUT, timeout);
-        ((BindingProvider)subscriberPort).getRequestContext().put(BindingProviderProperties.CONNECT_TIMEOUT, connTimeout);
+        ((BindingProvider)subscriberPort).getRequestContext().put("com.sun.xml.internal.ws.request.timeout", timeout);
+        ((BindingProvider)subscriberPort).getRequestContext().put("com.sun.xml.internal.ws.connect.timeout", connTimeout);
         return subscriberPort;
     }
 
