@@ -102,7 +102,11 @@ public class BulkProcessor implements Processor {
                     continue;
                 }
 
-                CommandSelector.valueOf(line[0]).doExecute(line, subscriberSrv); // 0 to get cmd id
+                try {
+                    CommandSelector.valueOf(line[0]).doExecute(line, subscriberSrv); // 0 to get cmd id
+                } catch (Throwable ex) {
+                    // No op
+                }
             }
             shutdown(5);
         } catch (InterruptedException e) {
