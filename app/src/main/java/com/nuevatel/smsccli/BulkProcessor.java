@@ -32,9 +32,9 @@ public class BulkProcessor implements Processor {
 
     private int size;
 
-    private long timeout;
+    private Integer timeout;
 
-    private long connTimeout;
+    private Integer connTimeout;
 
     private Queue<String[]> queue = new ConcurrentLinkedQueue<>();
 
@@ -42,7 +42,7 @@ public class BulkProcessor implements Processor {
 
     private boolean running = false;
 
-    public BulkProcessor(String wsUrl, String source, int size, long timeout, long connTimeout) {
+    public BulkProcessor(String wsUrl, String source, int size, Integer timeout, Integer connTimeout) {
         this.wsUrl = wsUrl;
         this.source = source;
         this.size = size;

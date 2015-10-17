@@ -30,8 +30,8 @@ public class App {
             }
 
             Integer size = IntegerUtil.tryParse(prop.getProperty("size"));
-            Long timeout = LongUtil.tryParse(prop.getProperty("ws.subscriber.timeout"));
-            Long connTimeout = LongUtil.tryParse(prop.getProperty("ws.subscriber.connTimeout"));
+            Integer timeout = IntegerUtil.tryParse(prop.getProperty("ws.subscriber.timeout"));
+            Integer connTimeout = IntegerUtil.tryParse(prop.getProperty("ws.subscriber.connTimeout"));
             BulkProcessor processor = new BulkProcessor(url, source, size, timeout, connTimeout);
             hook.appendProcess(processor);
             // Start client processor
